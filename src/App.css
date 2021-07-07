@@ -29,7 +29,11 @@
 }
 
 .searchBox{
-  padding: 10px;
+  
+}
+
+.submit{
+  border-radius: 50px;
 }
 
 

@@ -16,7 +16,7 @@ export default function Header() {
 
     const toggle = () => setIsOpen(!isOpen);
     return (
-        <div>
+        <div className="container">
             <Navbar dark color="primary" light expand="md">
                 <NavbarBrand href="/">Track My Bus</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
@@ -46,7 +46,7 @@ export default function Header() {
                         </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
+                    <NavbarText>Contact Us</NavbarText>
                     </Collapse>
             </Navbar>
         </div>

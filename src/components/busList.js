@@ -1,44 +1,50 @@
 import React from 'react'
-import { Table } from 'reactstrap';
+import { Table ,Badge } from 'reactstrap';
+
+function displayLocation(){
+    console.log("clicked")
+}
+
 
 function BusList(props) {
+    const busLi= props.buses.map((bus)=>{
+        return(
+            <tr key={bus.busNo} onClick={displayLocation}>
+            <td>{bus.busNo}</td>
+            <td>{bus.route}</td>
+            <td>{bus.days.map((day)=>{
+                return(
+                    <Badge style={badStyle}>{day}</Badge>
+                )
+            })
+            }
+            </td>            
+           
+            </tr>
+        )
+    });
     
     return (
-        <div className="background">
-        <div className="list ">
+        <div className="container">
             <Table>
                 <thead>
                     <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
+                    <th>Bus Number</th>
+                    <th>Bus Route</th>
+                    <th>Days</th>
+                    
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
+                    {busLi}
                 </tbody>
             </Table>
-        </div>
         </div> 
     )
 }
 
+const badStyle={
+    background:"red",
+    margin:2
+}
 export default BusList

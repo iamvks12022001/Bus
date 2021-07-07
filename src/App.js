@@ -4,7 +4,7 @@ import Footer from './components/footerComponent';
 import SearchBox from './components/searchBox';
 import BusList from './components/busList';
 import Example from './components/bus';
-import {busData} from './shared/busData'
+import {busData} from './shared/busData';
 function App() {
   return (
     <div className="App">
